@@ -1,7 +1,7 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {},
     "installsAfter": [
@@ -11,7 +11,7 @@
     "containerEnv": {
         "LAMBDA_DOCKER_NETWORK": "bridge",
         "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache",
-        "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+        // "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
     },
     "onCreateCommand": {
         "install-dependencies": "yarn install"
