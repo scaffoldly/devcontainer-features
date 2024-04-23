@@ -1,11 +1,19 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {},
+    "dependsOn": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers-contrib/features/localstack:2": {
+            "version": "3.1.0"
+        }
+    },
     "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/docker-in-docker",
+        "ghcr.io/devcontainers-contrib/features/localstack"
     ],
     "privileged": true,
     "containerEnv": {
@@ -14,10 +22,23 @@
         // "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
     },
     "onCreateCommand": {
-        "install-dependencies": "yarn install"
+        "log": "echo \"executing onCreateCommand!\"",
+        "install-dependencies": "yarn install",
+        "start-localstack": "localstack start --host --detached",
+        "open-ports": "gh codespace ports visibility -c $CODESPACE_NAME 4566:public",
+        "update-aws-endpoint": "aws configure set default.endpoint_url https://$CODESPACE_NAME-4566.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
+    },
+    "postStartCommand": {
+        "log": "echo \"executing postStartCommand!\""
+    },
+    "postAttachCommand": {
+        "log": "echo \"executing postAttachCommand!\""
+    },
+    "postCreateCommand": {
+        "log": "echo \"executing postCreateCommand!\""
     },
     "updateContentCommand": {
-        "start-services": "restart localstack"
+        "log": "echo \"executing updateContentCommand!\""
     },
     "customizations": {
         "vscode": {
