@@ -1,0 +1,52 @@
+{
+    "name": "AWS Serverless Express",
+    "id": "aws-serverless-express",
+    "version": "1.0.0",
+    "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
+    "options": {},
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ],
+    "privileged": true,
+    "containerEnv": {
+        "LAMBDA_DOCKER_NETWORK": "bridge",
+        "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache",
+        "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+    },
+    "onCreateCommand": {
+        "install-dependencies": "yarn install"
+    },
+    "updateContentCommand": {
+        "start-services": "restart localstack"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint"
+            ],
+            "settings": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "always"
+                },
+                "[html]": {
+                    "editor.defaultFormatter": "vscode.html-language-features"
+                },
+                "editor.formatOnSave": true,
+                "eslint.lintTask.enable": true,
+                "eslint.validate": [
+                    "javascript",
+                    "typescript"
+                ],
+                "git.autofetch": true,
+                "task.allowAutomaticTasks": "on",
+                "prettier.prettierPath": "${containerWorkspaceFolder}/node_modules/prettier",
+                "terminal.integrated.scrollback": 100000,
+                "typescript.tsdk": "${containerWorkspaceFolder}/node_modules/typescript/lib",
+                "typescript.tsserver.maxTsServerMemory": 1024,
+                "typescript.preferences.importModuleSpecifier": "shortest"
+            }
+        }
+    }
+}
