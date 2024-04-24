@@ -1,7 +1,7 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {},
     "dependsOn": {},
@@ -10,31 +10,32 @@
     ],
     "privileged": true,
     "containerEnv": {
-        "LAMBDA_DOCKER_NETWORK": "bridge",
-        "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache"
+        // "LAMBDA_DOCKER_NETWORK": "bridge",
+        // "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache"
         // "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
     },
     "onCreateCommand": {
-        "log": "echo executing onCreateCommand || exit",
-        "install-dependencies": "yarn install || exit"
+        "log": "echo onCreateCommand || exit",
+        "log-env": "env || exit"
+        // "install-dependencies": "yarn install || exit"
         // "start-localstack": "localstack start --host --detached",
         // "open-ports": "gh codespace ports visibility -c $CODESPACE_NAME 4566:public",
         // "update-aws-endpoint": "aws configure set default.endpoint_url https://$CODESPACE_NAME-4566.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
     },
     "postStartCommand": {
-        "log": "echo executing postStartCommand || exit",
+        "log": "echo postStartCommand || exit",
         "log-env": "env || exit"
     },
     "postAttachCommand": {
-        "log": "echo executing postAttachCommand || exit",
+        "log": "echo postAttachCommand || exit",
         "log-env": "env || exit"
     },
     "postCreateCommand": {
-        "log": "echo executing postCreateCommand || exit",
+        "log": "echo postCreateCommand || exit",
         "log-env": "env || exit"
     },
     "updateContentCommand": {
-        "log": "echo executing updateContentCommand || exit",
+        "log": "echo updateContentCommand || exit",
         "log-env": "env || exit"
     },
     "customizations": {
