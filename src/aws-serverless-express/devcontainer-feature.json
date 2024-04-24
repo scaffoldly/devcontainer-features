@@ -17,7 +17,7 @@
     "onCreateCommand": {
         "log": "echo executing onCreateCommand",
         "install-dependencies": "yarn install",
-        "start-localstack": "localstack start --host --detached",
+        // "start-localstack": "localstack start --host --detached",
         "open-ports": "gh codespace ports visibility -c $CODESPACE_NAME 4566:public",
         "update-aws-endpoint": "aws configure set default.endpoint_url https://$CODESPACE_NAME-4566.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
     },
