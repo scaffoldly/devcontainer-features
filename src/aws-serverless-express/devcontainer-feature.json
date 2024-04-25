@@ -1,7 +1,7 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {},
     "dependsOn": {},
@@ -10,17 +10,13 @@
     ],
     "privileged": true,
     "containerEnv": {
-        // "LAMBDA_DOCKER_NETWORK": "bridge",
-        // "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache"
-        // "LOCALSTACK_ENDPOINT": "https://${localEnv:CODESPACE_NAME}-4566.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+        "LAMBDA_DOCKER_NETWORK": "bridge",
+        "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache"
     },
+    "entrypoint": "echo entrypoint && env",
     "onCreateCommand": {
         "log": "echo onCreateCommand || exit",
         "log-env": "env || exit"
-        // "install-dependencies": "yarn install || exit"
-        // "start-localstack": "localstack start --host --detached",
-        // "open-ports": "gh codespace ports visibility -c $CODESPACE_NAME 4566:public",
-        // "update-aws-endpoint": "aws configure set default.endpoint_url https://$CODESPACE_NAME-4566.$GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN"
     },
     "postStartCommand": {
         "log": "echo postStartCommand || exit",
