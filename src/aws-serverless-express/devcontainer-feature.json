@@ -1,7 +1,7 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {},
     "dependsOn": {},
@@ -14,26 +14,11 @@
         "LOCALSTACK_VOLUME_DIR": "${containerWorkspaceFolder}/.cache"
     },
     "entrypoint": "supervisord",
-    "onCreateCommand": {
-        "log": "echo onCreateCommand || exit",
-        "log-env": "env || exit"
-    },
-    "postStartCommand": {
-        "log": "echo postStartCommand || exit",
-        "log-env": "env || exit"
-    },
-    "postAttachCommand": {
-        "log": "echo postAttachCommand || exit",
-        "log-env": "env || exit"
-    },
-    "postCreateCommand": {
-        "log": "echo postCreateCommand || exit",
-        "log-env": "env || exit"
-    },
-    "updateContentCommand": {
-        "log": "echo updateContentCommand || exit",
-        "log-env": "env || exit"
-    },
+    "onCreateCommand": {},
+    "postStartCommand": {},
+    "postAttachCommand": {},
+    "postCreateCommand": {},
+    "updateContentCommand": {},
     "customizations": {
         "vscode": {
             "extensions": [
