@@ -15,7 +15,7 @@ Devcontainer configuration for scaffoldly/stack-aws-serverless-express
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| publicPorts | A comma separated list of ports for which to make public. | string | 4566 |
 
 ## Customizations
 
