@@ -3,7 +3,13 @@
     "id": "aws-serverless-express",
     "version": "1.0.10",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
-    "options": {},
+    "options": {
+        "publicPorts": {
+            "type": "string",
+            "default": "4566",
+            "description": "A comma separated list of ports for which to make public."
+        }
+    },
     "dependsOn": {},
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
@@ -42,7 +48,7 @@
                 "git.autofetch": true,
                 "task.allowAutomaticTasks": "on",
                 "prettier.prettierPath": "${containerWorkspaceFolder}/node_modules/prettier",
-                "terminal.integrated.scrollback": 100000,
+                "terminal.integrated.scrollback": 10000,
                 "typescript.tsdk": "${containerWorkspaceFolder}/node_modules/typescript/lib",
                 "typescript.tsserver.maxTsServerMemory": 1024,
                 "typescript.preferences.importModuleSpecifier": "shortest"
