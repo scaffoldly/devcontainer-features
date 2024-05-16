@@ -1,12 +1,12 @@
 {
     "name": "AWS Serverless Express",
     "id": "aws-serverless-express",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "Devcontainer configuration for scaffoldly/stack-aws-serverless-express",
     "options": {
         "publicPorts": {
             "type": "string",
-            "default": "4566",
+            "default": "",
             "description": "A comma separated list of ports for which to make public."
         }
     },

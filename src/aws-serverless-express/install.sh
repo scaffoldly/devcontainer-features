@@ -15,7 +15,7 @@ mkdir -p /etc/scaffoldly
 if [ -n "${PUBLICPORTS}" ]; then
   echo "${PUBLICPORTS}" > /etc/scaffoldly/public-ports
 else
-  echo "4566" > /etc/scaffoldly/public-ports
+  echo "" > /etc/scaffoldly/public-ports
 fi
 
 chmod -R +r /etc/scaffoldly
